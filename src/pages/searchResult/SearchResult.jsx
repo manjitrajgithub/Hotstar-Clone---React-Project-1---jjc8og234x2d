@@ -30,6 +30,7 @@ const SearchResult = () => {
   const fetchNextPageData = () => {
     setLoading(true)
     fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then((res) => {
+      console.log(`/search/multi?query=${query}&page=${pageNum}`)
       if (data.results) {
         setData({
           ...data, results: [...data?.results, ...res.results]
